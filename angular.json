@@ -23,6 +23,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "baseHref": "/Gift4U/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"

@@ -1,0 +1,67 @@
+/* background container */
+.neon-hearts {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* neon heart */
+.neon-hearts span {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #ff2fa1;
+  transform: rotate(45deg);
+  animation: neonFloat 12s linear infinite;
+
+  /* NEON GLOW */
+  box-shadow:
+    0 0 8px #ff2fa1,
+    0 0 18px #ff2fa1,
+    0 0 35px #ff0077,
+    0 0 55px #ff0077;
+}
+
+.neon-hearts span::before,
+.neon-hearts span::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #ff2fa1;
+  border-radius: 50%;
+}
+
+.neon-hearts span::before {
+  top: -13px;
+  left: 0;
+}
+
+.neon-hearts span::after {
+  left: -13px;
+  top: 0;
+}
+
+/* variations */
+.neon-hearts span:nth-child(1) { left: 10%; animation-duration: 14s; transform: scale(0.9) rotate(45deg); }
+.neon-hearts span:nth-child(2) { left: 25%; animation-duration: 10s; transform: scale(1.2) rotate(45deg); }
+.neon-hearts span:nth-child(3) { left: 45%; animation-duration: 16s; transform: scale(1) rotate(45deg); }
+.neon-hearts span:nth-child(4) { left: 65%; animation-duration: 12s; transform: scale(1.3) rotate(45deg); }
+.neon-hearts span:nth-child(5) { left: 80%; animation-duration: 15s; transform: scale(0.8) rotate(45deg); }
+.neon-hearts span:nth-child(6) { left: 90%; animation-duration: 11s; transform: scale(1.4) rotate(45deg); }
+
+/* floating animation */
+@keyframes neonFloat {
+  0% {
+    bottom: -10%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 110%;
+    opacity: 0;
+  }
+}
